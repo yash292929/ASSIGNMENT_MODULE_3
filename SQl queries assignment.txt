@@ -1,0 +1,66 @@
+1)SELECT DISTINCT Job FROM emp;
+
+2)SELECT * FROM emp ORDER BY Deptno ASC;
+  SELECT * FROM emp ORDER BY Job DESC;
+
+3)SELECT DISTINCT Job FROM emp ORDER BY Job DESC;
+
+4)SELECT Ename FROM `emp` WHERE Hiredate < '1981-01-01';
+
+5)SELECT Empno,Ename,sal,sal/30 FROM emp ORDER BY Sal*12 ASC 
+
+6)SELECT Empno,Ename,Sal FROM `emp` WHERE Mgr = '7369';
+
+7)SELECT * FROM emp WHERE Comm > Sal;
+
+8)SELECT Ename FROM emp WHERE Job = 'CLERK' OR Job = 'ANALYST' ORDER BY Ename DESC
+
+9)SELECT Ename FROM emp WHERE sal BETWEEN 2200 AND 4500
+
+10)SELECT Ename FROM emp WHERE Ename LIKE 'S%%%%'
+
+11)SELECT Ename FROM emp WHERE Empno NOT LIKE '78%%'
+
+
+12)SELECT Ename FROM emp WHERE Deptno = '20'
+
+13)
+
+14)SELECT Ename FROM emp WHERE Deptno = '20' AND Job = 'CLERK' OR Job = 'PRESIDENT' OR Job = 'MANAGER'
+
+
+15)SELECT Ename FROM emp WHERE Sal ='3000' OR Sal = '800' AND Ename NOT IN ('FORD','SMITH') ORDER BY sal DESC
+
+16)SELECT Ename FROM emp WHERE Job in (SELECT DISTINCT Job FROM emp WHERE Ename in ('SMITH','ALLEN')) AND Ename NOT IN ('SMITH','ALLEN')
+
+
+17)SELECT Ename FROM emp WHERE Deptno = 10 AND Job NOT IN (SELECT Job FROM emp WHERE Deptno = 20)
+
+18)SELECT Ename,MAX(Sal) FROM emp 
+
+19)SELECT *,MAX(Sal) FROM emp
+
+20)SELECT SUM(Sal) FROM emp WHERE Job = 'MANAGER'
+
+
+21)SELECT Ename FROM emp WHERE Ename LIKE '%A%'
+
+22)SELECT Ename FROM emp WHERE Sal IN (SELECT MIN(Sal) FROM emp GROUP BY Job) ORDER BY Job ASC
+
+
+23)SELECT Ename FROM emp WHERE Sal > (SELECT Sal FROM emp WHERE Ename = 'BLAKE')
+
+24)CREATE VIEW v1 AS
+SELECT t1.ename, t1.Job, t2.dname,t2.loc
+FROM emp AS t1 LEFT JOIN dept AS t2
+ON t1.Deptno = t2.Deptno;
+
+25)
+
+
+26)ALTER TABLE student ADD Pin bigint
+
+27)
+
+
+
